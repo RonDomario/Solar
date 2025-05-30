@@ -1,0 +1,6 @@
+venv
+.idea
+.env
+plan.md
+logs/bot.log
+stuff
