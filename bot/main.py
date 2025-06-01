@@ -5,11 +5,9 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message, BufferedInputFile
-from aiogram.exceptions import TelegramBadRequest
 import requests
 from pathlib import Path
 from dotenv import load_dotenv
-from PIL import Image
 from utils.logger import set_logger
 
 logger = set_logger("../logs/bot.log")
@@ -18,7 +16,6 @@ from utils.config import Config  # noqa: E402
 from utils.moon import Moonphase  # noqa: E402
 from utils.commands import setup_commands  # noqa: E402
 from utils.filters import Cooldown  # noqa: E402
-from keyboards.mars_kb import mars_keyboard  # noqa: E402
 from handlers.mercury import mercury  # noqa: E402
 from handlers.venus import venus  # noqa: E402
 from handlers.earth import earth  # noqa: E402
@@ -55,61 +52,6 @@ dp = Dispatcher()
 dp.include_routers(mercury, venus, earth, mars, jupiter, saturn)
 
 
-@dp.message(Command("venus"), Cooldown())
-async def venus(msg: Message):
-    user_requests[msg.chat.id] = datetime.datetime.now().timestamp()
-    image = Image.open("../assets/results/venus.png")
-    buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
-    buffer.seek(0)
-    await bot.send_photo(msg.chat.id, BufferedInputFile(buffer.read(), "venus"), caption="<b>Venus</b>",
-                         parse_mode="HTML")
-
-
-@dp.message(Command("earth"), Cooldown())
-async def earth(msg: Message):
-    user_requests[msg.chat.id] = datetime.datetime.now().timestamp()
-    image = Image.open("../assets/results/earth.png")
-    buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
-    buffer.seek(0)
-    await bot.send_photo(msg.chat.id, BufferedInputFile(buffer.read(), "earth"), caption="<b>Earth</b>",
-                         parse_mode="HTML")
-
-
-@dp.message(Command("mars"), Cooldown())
-async def mars(msg: Message):
-    user_requests[msg.chat.id] = datetime.datetime.now().timestamp()
-    image = Image.open("../assets/results/mars.png")
-    buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
-    buffer.seek(0)
-    await bot.send_photo(msg.chat.id, BufferedInputFile(buffer.read(), "mars"), caption="<b>Mars</b>",
-                         parse_mode="HTML", reply_markup=mars_keyboard())
-
-
-@dp.message(Command("jupiter"), Cooldown())
-async def jupiter(msg: Message):
-    user_requests[msg.chat.id] = datetime.datetime.now().timestamp()
-    image = Image.open("../assets/results/jupiter.png")
-    buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
-    buffer.seek(0)
-    await bot.send_photo(msg.chat.id, BufferedInputFile(buffer.read(), "jupiter"), caption="<b>Jupiter</b>",
-                         parse_mode="HTML")
-
-
-@dp.message(Command("saturn"), Cooldown())
-async def saturn(msg: Message):
-    user_requests[msg.chat.id] = datetime.datetime.now().timestamp()
-    image = Image.open("../assets/results/saturn.png")
-    buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
-    buffer.seek(0)
-    await bot.send_photo(msg.chat.id, BufferedInputFile(buffer.read(), "saturn"), caption="<b>Saturn</b>",
-                         parse_mode="HTML")
-
-
 @dp.message(Command("moonphase"), Cooldown())
 async def moonphase(msg: Message):
     user_requests[msg.chat.id] = datetime.datetime.now().timestamp()
@@ -128,13 +70,10 @@ async def apod(msg: Message):
     if data:
         if data.get("media_type") == "image":
             image = data.get("hdurl")
-            caption = (f"<b>{data.get("title")}</b>\n"
+            caption = (f"<a href=\"{image}\"><b>{data.get("title")}</b></a>\n"
                        f"{data.get("date")}, Copyright: {data.get("copyright")}\n\n"
                        f"{data.get("explanation")}")
-            try:
-                await bot.send_photo(msg.chat.id, image, caption=caption, parse_mode="HTML")
-            except TelegramBadRequest:
-                await bot.send_message(msg.chat.id, caption, parse_mode="HTML")
+            await bot.send_message(msg.chat.id, caption, parse_mode="HTML")
 
 
 async def main():

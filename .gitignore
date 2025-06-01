@@ -3,4 +3,5 @@ venv
 .env
 plan.md
 logs/bot.log
+cache/apod_cache.json
 stuff
