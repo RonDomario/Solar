@@ -26,7 +26,7 @@ async def mars_handler(msg: Message):
 @mars.callback_query(lambda callback_query: callback_query.data == "mars_data")
 async def callback(call: CallbackQuery):
     data_dict: dict = mars_facts.get("data", {})
-    data_text = ""
+    data_text = "<b>Mars</b>\n"
     for param, (val, mes) in data_dict.items():
-        data_text += f"{param.capitalize()}: {val} {mes}\n"
-    await call.message.answer(data_text)
+        data_text += f"{param}: {val}{mes}\n"
+    await call.message.answer(data_text, "HTML")

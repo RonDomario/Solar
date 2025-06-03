@@ -1,8 +1,10 @@
 from aiogram import Router
-from aiogram.types import Message, BufferedInputFile
+from aiogram.types import Message, CallbackQuery, BufferedInputFile
 from aiogram.filters import Command
 from utils.filters import Cooldown
 from utils.rate_limits import user_requests
+from utils.fact_loader import saturn_facts
+from keyboards.saturn_kb import saturn_keyboard
 from PIL import Image
 import io
 import datetime
@@ -17,4 +19,14 @@ async def saturn_handler(msg: Message):
     buffer = io.BytesIO()
     image.save(buffer, format="PNG")
     buffer.seek(0)
-    await msg.answer_photo(BufferedInputFile(buffer.read(), "saturn"), "<b>Saturn</b>", "HTML")
+    await msg.answer_photo(BufferedInputFile(buffer.read(), "saturn"), "<b>Saturn</b>", "HTML",
+                           reply_markup=saturn_keyboard())
+
+
+@saturn.callback_query(lambda callback_query: callback_query.data == "saturn_data")
+async def callback(call: CallbackQuery):
+    data_dict: dict = saturn_facts.get("data", {})
+    data_text = "<b>Saturn</b>\n"
+    for param, (val, mes) in data_dict.items():
+        data_text += f"{param}: {val}{mes}\n"
+    await call.message.answer(data_text, "HTML")

@@ -10,6 +10,9 @@ all_commands = {"/mercury": "Mercury",
                 "/mars": "Mars",
                 "/jupiter": "Jupiter",
                 "/saturn": "Saturn",
+                "/uranus": "Uranus",
+                "/neptune": "Neptune",
+                "/pluto": "Pluto",
                 "/moonphase": "Current state of the moon",
                 "/apod": "Astronomy Picture of the Day"}
 

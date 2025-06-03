@@ -1,48 +1,48 @@
 {
     "data": {
-        "mass": [
-            6.4169e+23,
-            "kg"
+        "Mass": [
+            0.64169,
+            "\u00d710\u00b2\u2074 kg"
         ],
-        "volume": [
-            163120000000.0,
-            "km\u00b3"
+        "Volume": [
+            16.312,
+            "\u00d710\u00b9\u2070 km\u00b3"
         ],
-        "radius": [
+        "Radius": [
             3389.5,
-            "km"
+            " km"
         ],
-        "density": [
+        "Density": [
             3934,
-            "kg/m\u00b3"
+            " kg/m\u00b3"
         ],
-        "gravity": [
+        "Gravity": [
             3.73,
-            "m/s\u00b2"
+            " m/s\u00b2"
         ],
-        "satelites": [
+        "Satelites": [
             2,
             ""
         ],
-        "rings": [
-            null,
+        "Rings": [
+            "No",
             ""
         ],
-        "distance from the sun": [
-            227956000.0,
-            "km"
+        "Distance from the sun": [
+            227.956,
+            "\u00d710\u2076 km"
         ],
-        "sidereal orbit period": [
+        "Sidereal orbit period": [
             686.98,
-            "days"
+            " days"
         ],
-        "sidereal rotation period": [
+        "Sidereal rotation period": [
             24.6229,
-            "hrs"
+            " hrs"
         ],
-        "length of day": [
+        "Length of day": [
             24.6597,
-            "hrs"
+            " hrs"
         ]
     }
 }

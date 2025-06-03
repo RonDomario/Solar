@@ -22,6 +22,9 @@ from handlers.earth import earth  # noqa: E402
 from handlers.mars import mars  # noqa: E402
 from handlers.jupiter import jupiter  # noqa: E402
 from handlers.saturn import saturn  # noqa: E402
+from handlers.uranus import uranus  # noqa: E402
+from handlers.neptune import neptune  # noqa: E402
+from handlers.pluto import pluto  # noqa: E402
 
 
 def apod_update():
@@ -49,7 +52,7 @@ config = Config()
 apod_cache = Path("../cache/apod_cache.json")
 bot = Bot(config.tg_token)
 dp = Dispatcher()
-dp.include_routers(mercury, venus, earth, mars, jupiter, saturn)
+dp.include_routers(mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto)
 
 
 @dp.message(Command("moonphase"), Cooldown())
@@ -69,9 +72,11 @@ async def apod(msg: Message):
     data = apod_update()
     if data:
         if data.get("media_type") == "image":
-            image = data.get("hdurl")
-            caption = (f"<a href=\"{image}\"><b>{data.get("title")}</b></a>\n"
-                       f"{data.get("date")}, Copyright: {data.get("copyright")}\n\n"
+            image = data.get("url")
+            hdimage = data.get("hdurl")
+            caption = (f"<a href=\"{image}\"><b>{data.get("title")}</b></a> "
+                       f"[<a href=\"{hdimage}\">View original image</a>]\n"
+                       f"{data.get("date")}, Copyright: {data.get("copyright").strip()}\n\n"
                        f"{data.get("explanation")}")
             await bot.send_message(msg.chat.id, caption, parse_mode="HTML")
 

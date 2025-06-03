@@ -1,27 +1,27 @@
 {
     "data": {
         "Mass": [
-            568.32,
+            102.409,
             "\u00d710\u00b2\u2074 kg"
         ],
         "Volume": [
-            82713,
+            6254,
             "\u00d710\u00b9\u2070 km\u00b3"
         ],
         "Radius": [
-            58232,
+            24622,
             " km"
         ],
         "Density": [
-            687,
+            1638,
             " kg/m\u00b3"
         ],
         "Gravity": [
-            11.19,
+            11.27,
             " m/s\u00b2"
         ],
         "Satelites": [
-            274,
+            16,
             ""
         ],
         "Rings": [
@@ -29,19 +29,19 @@
             ""
         ],
         "Distance from the sun": [
-            1432.041,
+            4514.953,
             "\u00d710\u2076 km"
         ],
         "Sidereal orbit period": [
-            10755.699,
+            60189.018,
             " days"
         ],
         "Sidereal rotation period": [
-            10.656,
+            16.11,
             " hrs"
         ],
         "Length of day": [
-            10.656,
+            16.11,
             " hrs"
         ]
     }
