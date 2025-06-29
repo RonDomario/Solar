@@ -3,8 +3,9 @@ venv
 bot/handlers/__pycache__
 bot/keyboards/__pycache__
 bot/utils/__pycache__
+cache
+logs
+facts/factorio.py
 .env
 plan.md
-logs/bot.log
-cache/apod_cache.json
 stuff
