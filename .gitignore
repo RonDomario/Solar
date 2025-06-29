@@ -1,5 +1,8 @@
 venv
 .idea
+bot/handlers/__pycache__
+bot/keyboards/__pycache__
+bot/utils/__pycache__
 .env
 plan.md
 logs/bot.log

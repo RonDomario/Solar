@@ -30,3 +30,4 @@ async def callback(call: CallbackQuery):
     for param, (val, mes) in data_dict.items():
         data_text += f"{param}: {val}{mes}\n"
     await call.message.answer(data_text, "HTML")
+    await call.answer()

@@ -4,16 +4,20 @@ import logging
 
 logger = logging.getLogger("../logs/bot.log")
 
-all_commands = {"/mercury": "Mercury",
-                "/venus": "Venus",
-                "/earth": "Earth",
-                "/mars": "Mars",
-                "/jupiter": "Jupiter",
-                "/saturn": "Saturn",
-                "/uranus": "Uranus",
-                "/neptune": "Neptune",
-                "/pluto": "Pluto",
-                "/moonphase": "Current state of the moon",
+all_commands = {"/mercury": "Information about Mercury",
+                "/venus": "Information about Venus",
+                "/earth": "Information about Earth",
+                "/mars": "Information about Mars",
+                "/jupiter": "Information about Jupiter",
+                "/saturn": "Information about Saturn",
+                "/uranus": "Information about Uranus",
+                "/neptune": "Information about Neptune",
+                "/pluto": "Information about Pluto",
+                "/moonphase": "Current phase of the Moon",
+                "/newmoon": "Date of the next New Moon",
+                "/fullmoon": "Date of the next Full Moon",
+                "/moonphaseat": "Phase of the Moon on a set date",
+                "/moonphasenext": "Preview of the next phases of the Moon",
                 "/apod": "Astronomy Picture of the Day"}
 
 
