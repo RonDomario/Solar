@@ -1,5 +1,9 @@
 import ephem
+from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
+
+root = Path(__file__).resolve().parent.parent.parent
+moonphase_image = root / "assets" / "results" / "moonphase.png"
 
 
 class Moon:
@@ -40,8 +44,7 @@ class Moonphase:
             return f"🌖 Waning Gibbous {self._phase_1:.2f}%"
 
     def draw_img(self):
-        image = Image.open("../assets/results/moonphase.png").convert("RGBA")
-        # image = Image.open("../../assets/results/moonphase.png").convert("RGBA")
+        image = Image.open(moonphase_image).convert("RGBA")
         scale = 2
         padding = 2
         width, height = image.size
@@ -109,7 +112,7 @@ class Moonphase:
         image_width, image_height = image.size
         label_height = 200
         total_width, total_height = image_width, image_height + label_height
-        new_image = Image.new("RGBA", (total_width, total_height), (0, 0, 0, 100))
+        new_image = Image.new("RGBA", (total_width, total_height), (0, 0, 0, 255))
         new_image.paste(image, (0, 0))
         font = ImageFont.load_default(48)
         draw = ImageDraw.Draw(new_image)
@@ -123,8 +126,7 @@ class Moonphase:
             text_width = bbox[2] - bbox[0]
             x = (image_width - text_width) // 2
             y = start + i * line_height
-            # draw.text((x, y), line, font=font, fill="white")
-            draw.text((x, y), line, font=font, fill="black")
+            draw.text((x, y), line, font=font, fill="white")
         return new_image
 
     @classmethod

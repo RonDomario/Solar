@@ -1,10 +1,12 @@
 venv
 .idea
+bot/__pycache__
 bot/handlers/__pycache__
 bot/keyboards/__pycache__
 bot/utils/__pycache__
 cache
 logs
+gallery.png
 facts/factorio.py
 .env
 plan.md
