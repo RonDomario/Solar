@@ -1,2 +1,4 @@
 ### Current Moon Phase
-![Moon Phase](gallery.png)
+![Moon Phase](moonphase.png)
+### Next Key Phases
+![Gallery](gallery.png)
