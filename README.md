@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌒 Waxing Crescent 2.94%
+### Current Moon Phase: 🌒 Waxing Crescent 3.09%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
