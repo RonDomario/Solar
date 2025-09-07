@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌕 Full Moon 99.17%
+### Current Moon Phase: 🌕 Full Moon 99.32%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
