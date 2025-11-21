@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌑 New Moon 0.61%
+### Current Moon Phase: 🌑 New Moon 0.70%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
