@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌗 Last Quarter 49.58%
+### Current Moon Phase: 🌗 Last Quarter 49.13%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
