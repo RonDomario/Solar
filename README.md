@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌘 Waning Crescent 48.17%
+### Current Moon Phase: 🌘 Waning Crescent 47.25%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
