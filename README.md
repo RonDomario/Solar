@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌔 Waxing Gibbous 67.04%
+### Current Moon Phase: 🌔 Waxing Gibbous 67.41%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
