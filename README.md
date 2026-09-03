@@ -1,4 +1,4 @@
-### Current Moon Phase: 🌖 Waning Gibbous 56.61%
+### Current Moon Phase: 🌖 Waning Gibbous 55.06%
 ![Moon Phase](moonphase.png)
 ### Next Key Phases
 ![Gallery](gallery.png)
